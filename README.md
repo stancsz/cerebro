@@ -10,9 +10,9 @@ By acting as a high-velocity "Brain," it provides AI agents with infinite, topol
 
 The definitive specifications and architectural blueprints for this project are located in the `/docs` directory:
 
-*   [**The Cerebro Specification (`docs/spec.md`)**](./docs/spec.md)
+*   [**The Cerebro Specification (`docs/SPEC.md`)**](./docs/SPEC.md)
     The fundamental philosophy, theoretical guidelines, and original requirements of the post-biological cognitive architecture.
-*   [**Implementation Architecture (`docs/architecture.md`)**](./docs/architecture.md)
+*   [**Implementation Architecture (`docs/ARCH.md`)**](./docs/ARCH.md)
     The concrete engineering blueprint detailing the **Go Primary Engine / Python Tensor Sidecar** polyglot design, the 100% Embedded Database structure, and the multimodal data ingestion pipelines.
 *   [**AI Agent Protocol (`docs/SKILL.md`)**](./docs/SKILL.md)
     The strict interactivity guidelines and logical ultimatums. Pass this to any AI connecting to the MCP to force it to adhere to the rigid risk-evaluation invariants.
