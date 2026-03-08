@@ -5,3 +5,4 @@ amazon-braket-sdk>=1.70.0
 grpcio>=1.60.0
 grpcio-tools>=1.60.0
 numpy>=1.26.0
+networkx>=3.2.0

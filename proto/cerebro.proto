@@ -61,12 +61,27 @@ message MultimodalResponse {
   string semantic_text = 1;
 }
 
+enum SimulationType {
+  SUPERPOSITION_ARBITRAGE = 0; // For market spread, parallel variable probabilities
+  QUBO_ROUTING = 1;            // For supply chain and logistics mapping
+  ENTANGLEMENT_CASCADE = 2;    // For strategic domino-effect modeling
+}
+
+message QuantumEdge {
+  int32 source_node = 1;
+  int32 target_node = 2;
+  float entanglement_weight = 3;
+}
+
 message QuantumRequest {
   string scenario_context = 1;
   int32 variables_count = 2; // For qubit allocation size
+  SimulationType sim_type = 3;
+  repeated QuantumEdge dependency_map = 4; // Crucial for entanglement cascades
 }
 
 message QuantumResponse {
   float lowest_energy_probability = 1; // Used as the collapsed risk factor
   string optimized_path = 2;
+  map<string, float> collapsed_state_matrix = 3; // The final state of all variables
 }
