@@ -65,6 +65,7 @@ enum SimulationType {
   SUPERPOSITION_ARBITRAGE = 0; // For market spread, parallel variable probabilities
   QUBO_ROUTING = 1;            // For supply chain and logistics mapping
   ENTANGLEMENT_CASCADE = 2;    // For strategic domino-effect modeling
+  GAME_THEORY_MINMAX = 3;      // For asymmetric market warfare and competitor neutralizing
 }
 
 message QuantumEdge {

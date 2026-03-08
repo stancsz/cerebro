@@ -29,6 +29,20 @@ By bridging standard LLM tooling with Cerebro's Quantum Coprocessor, AI agents a
 3.  **Grand Strategy & Domino Effect Simulation (Quantum Entanglement):**
     A strategic AI planning a corporate acquisition must simulate how buying Company A impacts 50 competitor responses and overlapping patents. Classical LLM memory treats these steps linearly. Cerebro natively links these corporate entities via quantum entanglement gates (`CNOT`). The AI intentionally "acquires" the target Qubit in the simulation, and all 50 competitor Qubits instantly and probabilistically shift states at the speed of physics, allowing the AI to perfectly model the strategic "blast radius" without doing any sequential searching.
 
+### Sophisticated Case Studies: AI Business Architecture
+
+The integration of PennyLane and AWS Braket elevates Cerebro beyond standard software engineering, transforming it into a definitive "War Room" for business and market strategy:
+
+*   **Case Study A: The Hostile Takeover Defense (Combinatorial Entanglement)**
+    *   *The Scenario:* A rival corporation initiates a hostile takeover attempt of a subsidiary. The AI agent must determine the absolute mathematically perfect defensive maneuver (poison pills, defensive mergers, taking on debt) across 40 distinct strategic variables.
+    *   *The Quantum Solution:* The AI maps the 40 defense vectors as Qubits. Standard AI would test `Poison Pill A + Debt B`, then `Poison Pill B + Merger C`. Cerebro places all 40 vectors into a massive entangled state, mapping competitor aggression responses as `ZZ` interference gates. The AI executes the Braket job and simply reads the collapsed output: the *exact* permutation of 5 defenses that guarantees subsidiary survival with the lowest market-cap damage.
+*   **Case Study B: High-Frequency Market Offense (Superposition Arbitrage)**
+    *   *The Scenario:* An AI acting as a hedge fund manager detects a geopolitical event that will disrupt the semiconductor supply chain in exactly 48 hours. It must perfectly short and long 100 intersecting technology stocks to maximize yield. 
+    *   *The Quantum Solution:* The AI uses Cerebro's `SUPERPOSITION_ARBITRAGE` type. It plots all 100 stocks as nodes on a NetworkX graph, using historical covariance as the weighted edges. Cerebro uses PennyLane to define the QAOA Cost Hamiltonian. AWS Braket instantaneously solves the QUBO problem, handing the AI the mathematically optimized offensive portfolio allocation—a calculation that would take a classical supercomputer weeks to finalize.
+*   **Case Study C: Maximum ROI in Asymmetric Market Warfare (Game Theory)**
+    *   *The Scenario:* Two rival tech startups are locked in a vicious ad-spend and feature-launch war. Our AI acting as "Central Command" has $500,000 left. It needs to deploy features and ad capital across 20 different global regions, but the competitor will mathematically counter.
+    *   *The Quantum Solution:* This is a classic Game-Theoretic Min-Max problem, scaling infinitely complex as competitor responses stack. Cerebro models the 20 regional market investments as Qubits in an Entangled Cascade. By linking competitor counter-spend as negative weight edges in a NetworkX graph, the QAOA algorithm natively finds the **minimum energy state**. The AWS Braket output provides the AI with the exact sequential deployment of dollars and features that extracts the highest market share for the lowest possible capital investment, neutralizing the competitor's budget before it is spent.
+
 ## Documentation
 
 The definitive specifications and architectural blueprints for this project are located in the `/docs` directory:
@@ -93,4 +107,19 @@ go mod tidy
 go build -o bin/cerebro.exe ./cmd/cerebro
 ```
 
-You can then mount the resulting `cerebro` binary directly into your AI agent's MCP configuration!
+### 4. Mounting Cerebro into Claude Code 
+
+To give an AI Agent (like Claude Code) access to the Quantum Coprocessor and the Amygdala risk-engine, simply mount the compiled Go binary into the agent's MCP configuration.
+
+**How to mount in Claude Code**
+Run the following terminal command from the root of your target project:
+```bash
+claude mcp add cerebro "path/to/cerebro/bin/cerebro.exe"
+```
+
+**Executing an AI War-Room Instruction**
+Once mounted, simply prompt Claude with a high-level strategic problem, instructing it to use the protocol:
+```bash
+claude "Read the game theory scenario I have written in strategy.txt. Follow the rules in the Cerebro SKILL.md. Use the brain_quantum_simulate tool with the GAME_THEORY_MINMAX simulation type to map our capital against the competitors spend. Output the optimized deployment strategy."
+```
+Claude will automatically parse the textual strategy, isolate the variables, map the competitor network, send the gRPC payload into Cerebro, wait for AWS Braket to collapse the Quantum Wave, and output the absolute optimal business maneuver.
