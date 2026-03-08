@@ -4,16 +4,18 @@ This document defines the structural foundation and technology stack for the **C
 
 ## 1. System Topology & Technology Stack
 
-The Cerebro-MCP architecture adopts a **Polyglot Micro-Core Model**. 
+The Cerebro-MCP architecture adopts a **Tripartite Micro-Core Model**. 
 
-To balance the necessity for absolute determinism, raw I/O throughput, and advanced multi-dimensional tensor mathematics, the system is split into a **High-Velocity Go Core** and a **Cognitive Python Sidecar**.
+To balance the necessity for absolute determinism, raw I/O throughput, advanced multi-dimensional tensor mathematics, and incredibly complex combinatorial graph traversal, the system is split into three primary processing units:
 
 *   **Primary Engine (The Core):** Written in **Go (Golang)**. 
     *   **Responsibility:** Orchestrates the Model Context Protocol (MCP) server, manages all concurrent I/O streams (Thalamic Buffer), enforces strict execution invariants (Amygdala Check), and handles all filesystem/network interactions.
     *   **Why Go?** Unrivaled native concurrency (`goroutines`, `channels`), strict explicit error handling forcing risk evaluation at every step, and exceptional AI code-generation consistency.
-*   **Cognitive Sidecar (The Tensor Engine):** Written in **Python**.
+*   **Cognitive Sidecar (The Tensor Engine):** Written in **Python (`/sidecars/PythonSidecar`)**.
     *   **Responsibility:** Serves strictly as specialized computational infrastructure for tasks the Go Core delegates. Handles high-dimensional vector embeddings, **multimodal data processing (Vision/Audio to Text synthesis or embeddings)**, probabilistic risk modeling, and dependency graph traversal using the Python AI ecosystem (PyTorch, NumPy, HuggingFace, OpenAI/Whisper).
-    *   **Communication:** Interacts with the Go Core via high-speed **gRPC** (or local domain sockets).
+    *   **Communication:** Interacts with the Go Core via high-speed **gRPC**.
+*   **Quantum Coprocessor (The Physics Engine):** Written in **Python (`/sidecars/QuantumSidecar`)**.
+    *   **Responsibility:** Evaluates massively combinatorial execution topologies. When the Classical Tensor Engine receives a risk calculation involving millions of branching state mutations, it leverages AWS Braket or IBM Qiskit here to map the problem into Qubits, simulating the cascading failure states in a coherent quantum superposition to instantly measure the lowest energy state (safest path).
 
 ---
 

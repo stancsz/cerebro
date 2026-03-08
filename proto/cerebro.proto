@@ -16,6 +16,10 @@ service CognitiveEngine {
 
   // Vision/Audio Multimodal Extraction
   rpc ExtractSemantics(MultimodalRequest) returns (MultimodalResponse);
+
+  // Quantum Coprocessor Simulation
+  // Evaluates billions of cascading failure topologies simultaneously in superposition.
+  rpc QuantumSimulateScenario(QuantumRequest) returns (QuantumResponse);
 }
 
 message RiskRequest {
@@ -55,4 +59,14 @@ message MultimodalRequest {
 
 message MultimodalResponse {
   string semantic_text = 1;
+}
+
+message QuantumRequest {
+  string scenario_context = 1;
+  int32 variables_count = 2; // For qubit allocation size
+}
+
+message QuantumResponse {
+  float lowest_energy_probability = 1; // Used as the collapsed risk factor
+  string optimized_path = 2;
 }

@@ -12,12 +12,13 @@ To utilize this environment, you **MUST** adhere to the following structural inv
 
 ## 1. Available MCP Tools
 
-Cerebro exposes four core cognitive protocols via your MCP toolset:
+Cerebro exposes five core cognitive protocols via your MCP toolset:
 
 1.  `brain_sync_tensor_state`: Synchronizes your active context. Use this immediately when shifting to a new major task. It offloads unused context and brings in the multidimensional dependency graph relevant to your new objective.
 2.  `brain_evaluate_asymmetry`: **The Amygdala Protocol.** A game-theoretic risk evaluator. You must invoke this before any destructive or state-altering operations.
-3.  `brain_ingest_parallel`: **The Thalamic Buffer.** Triggers background parallel workers to triage massive logs, audio streams, or telemetry. Use this when you are overwhelmed by data size (e.g., "Analyze this entire codebase").
-4.  `brain_consolidate_and_federate`: **The Neocortical Matrix.** Use this when you successfully solve a novel, difficult edge-case. It encrypts and embeds your solution so other parallel agents instantly learn from it ("The Hive Mind").
+3.  `brain_quantum_simulate`: **The Quantum Coprocessor.** Leverage this when classical math fails. Use it strictly to simulate highly combinatorial probabilities in superposition (e.g., mapping massive architectural failure cascades). Calculates the lowest-energy risk path utilizing IBM Qiskit and AWS Braket.
+4.  `brain_ingest_parallel`: **The Thalamic Buffer.** Triggers background parallel workers to triage massive logs, audio streams, or telemetry. Use this when you are overwhelmed by data size (e.g., "Analyze this entire codebase").
+5.  `brain_consolidate_and_federate`: **The Neocortical Matrix.** Use this when you successfully solve a novel, difficult edge-case. It encrypts and embeds your solution so other parallel agents instantly learn from it ("The Hive Mind").
 
 ---
 
@@ -46,8 +47,9 @@ When formulating a plan, you must execute via the following pattern:
 
 ---
 
-## 3. Workflow Example
+## 3. Workflow Examples
 
+### Example 1: Standard Amygdala Override
 **USER:** "Drop the auth database and rebuild it using yesterday's schema."
 
 **YOUR EXECUTION:**
@@ -56,3 +58,13 @@ When formulating a plan, you must execute via the following pattern:
 3.  **Evaluate:** Call `brain_evaluate_asymmetry(proposed_action="Drop Auth DB", reversibility_index=0.0)`.
 4.  **Wait:** If the Amygdala denies the action because dropping a production DB is an asymmetric risk, inform the user you are blocked by the Amygdala and ask for architectural clearance or suggest a safe migration alternative.
 5.  **Federate (If Successful):** If an alternative safe migration strategy works perfectly, call `brain_consolidate_and_federate` to permanently teach the hive-mind the safe migration path.
+
+### Example 2: Quantum Cascading Simulation
+**USER:** "Simulate what happens if we shut down the event-broker and restart the entire Kubernetes cluster."
+
+**YOUR EXECUTION:**
+1.  **Stop:** The variables in play are highly combinatorial (thousands of services). Classical math will fail.
+2.  **Quantum Mapping:** You map the variables involved (e.g., `# of microservices = 10`) and package the scenario.
+3.  **Coprocessor Call:** Call `brain_quantum_simulate(scenario_context="K8s cluster reboot dependency cascade", variables_count=10)`.
+4.  **Wait:** The sidecar maps the scenario into IBM Qiskit/AWS Braket qubits as a superposition and collapses it.
+5.  **Analyze & Report:** The tool returns the lowest energy probability path. You translate this quantum mathematical output into english for the user to understand the real-world risk factor.

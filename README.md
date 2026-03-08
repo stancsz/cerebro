@@ -23,12 +23,13 @@ The definitive specifications and architectural blueprints for this project are 
 
 ---
 
-## System Blueprint (The Polyglot Core)
+## System Blueprint (The Tripartite Polyglot Core)
 
-The system leverages the strengths of two distinct ecosystems communicating via ultra-fast **gRPC**:
+The system leverages the strengths of three radically distinct ecosystems communicating via ultra-fast **gRPC**:
 
 1.  **High-Velocity Go Core (`/cmd`, `/internal`)**: Manages the official MCP Server standard I/O streams. Implements the *Thalamic Buffer* for concurrent I/O stream parsing and the *Synthetic Amygdala* to deterministically intercept and deny high-risk execution requests before they happen.
-2.  **Cognitive Python Sidecar (`/PythonSidecar`)**: Serves as specialized mathematical infrastructure. Mounts an embedded Vector database (`ChromaDB`) to form the *Federated Neocortical Matrix* and runs multi-dimensional tensor modeling to calculate execution probabilities.
+2.  **Cognitive Python Sidecar (`/sidecars/PythonSidecar`)**: Serves as specialized classical mathematical infrastructure. Mounts an embedded Vector database (`ChromaDB`) to form the *Federated Neocortical Matrix* and runs multi-dimensional tensor modeling to calculate execution probabilities.
+3.  **Quantum Coprocessor (`/sidecars/QuantumSidecar`)**: Transcends classical compute limits for impossibly dense combinatorial risk topologies (e.g. cascading failure states of an entire datacenter rebuild). Utilizes **IBM Qiskit** and **AWS Braket** to map massive graph variables into qubit superpositions, physically collapsing probabilities to find the lowest-energy risk path instantly.
 
 ## Development & Bootstrapping
 
@@ -43,17 +44,25 @@ Whenever changes are made to the `proto/cerebro.proto` file, regenerate the bind
 protoc --go_out=. --go-grpc_out=. proto/cerebro.proto
 
 # Generate Python bindings
-python -m grpc_tools.protoc -I./proto --python_out=./PythonSidecar --grpc_python_out=./PythonSidecar proto/cerebro.proto
+python -m grpc_tools.protoc -I./proto --python_out=./sidecars/PythonSidecar --grpc_python_out=./sidecars/PythonSidecar proto/cerebro.proto
+python -m grpc_tools.protoc -I./proto --python_out=./sidecars/QuantumSidecar --grpc_python_out=./sidecars/QuantumSidecar proto/cerebro.proto
 ```
 
-### 2. Running The Python Sidecar
+### 2. Running The Sub-Cores (Python & Quantum)
 
-The sidecar must be active to handle tensor math and risk modeling.
+The dual sidecars must be active to handle tensor math, embedded search, and circuit mappings.
 
 ```bash
-cd PythonSidecar
+# Start Classical Tensor Pipeline
+cd sidecars/PythonSidecar
 pip install -r requirements.txt
 python server.py
+
+# In a new terminal: Start Quantum Coprocessor
+cd sidecars/QuantumSidecar
+pip install -r requirements.txt
+python server.py
+# (Note: Export QUANTUM_PROVIDER="AWS_BRAKET" to switch from local simulator to actual hardware)
 ```
 
 ### 3. Compiling the Go Core
