@@ -1,0 +1,26 @@
+# Binaries
+/cerebro
+/bin/
+
+# Go workspaces
+go.work
+go.work.sum
+
+# JetBrains IDEs
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# Python Sidecar Environments
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# DB generated embedded files
+/data/
+/blob_storage/
+/matrix.db
+/tensor.db

@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+package cerebro;
+
+option go_package = "github.com/stancsz/cerebro/internal/proto";
+
+service CognitiveEngine {
+  // Amygdala Protocol
+  rpc EvaluateRiskQuotient(RiskRequest) returns (RiskResponse);
+
+  // Tensor State Math
+  rpc PruneContextGraph(GraphRequest) returns (GraphResponse);
+
+  // Matrix Embedding & Federation
+  rpc EmbedHeuristic(EmbedRequest) returns (EmbedResponse);
+
+  // Vision/Audio Multimodal Extraction
+  rpc ExtractSemantics(MultimodalRequest) returns (MultimodalResponse);
+}
+
+message RiskRequest {
+  string proposed_action = 1;
+  float reversibility_index = 2;
+  string current_objective = 3;
+}
+
+message RiskResponse {
+  float risk_quotient = 1;
+  bool allowed = 2;
+}
+
+message GraphRequest {
+  string active_objective = 1;
+  map<string, string> environment_state = 2;
+}
+
+message GraphResponse {
+  map<string, string> pruned_environment = 1;
+}
+
+message EmbedRequest {
+  string heuristic = 1;
+  string validation_hash = 2;
+  int32 saliency = 3;
+}
+
+message EmbedResponse {
+  bool success = 1;
+}
+
+message MultimodalRequest {
+  bytes payload = 1;
+  string modality = 2; // "vision", "audio", "ast"
+}
+
+message MultimodalResponse {
+  string semantic_text = 1;
+}

@@ -90,7 +90,7 @@ The main Go application loop must enforce the following sequence for every singl
 [Action Proposal Synthesis]  <-- The LLM decides what to do
         |
         v
-[🚨 AMYGDALA INTERCEPT / RISK CALCULATION 🚨] --> (If High Risk: DENY & Re-Evaluate)
+[AMYGDALA INTERCEPT / RISK CALCULATION] --> (If High Risk: DENY & Re-Evaluate)
         |
         v
 (If Low Risk: ALLOW EXECUTION)
