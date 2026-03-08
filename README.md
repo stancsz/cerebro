@@ -1,5 +1,9 @@
 # Cerebro-MCP
 
+<p align="center">
+  <img src="./docs/logo.png" alt="Cerebro-MCP Logo" width="250" />
+</p>
+
 **A Post-Biological Cognitive Architecture for Autonomous AI Agents**
 
 Cerebro-MCP is a custom Model Context Protocol (MCP) server designed to transcend the structural limitations of standard LLM architecture—specifically targeting context-window amnesia, single-threaded processing bottlenecks, and isolated network state.
